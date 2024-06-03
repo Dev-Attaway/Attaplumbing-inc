@@ -1,0 +1,12 @@
+.footer {
+  background: var(--gradient-footer);
+  padding: 20px;
+}
+
+.images {
+  width: 3rem;
+  height: auto;
+  object-fit: cover;
+  /* Align to the right side of the parent container */
+  /* Adjust the top position if needed */
+}
