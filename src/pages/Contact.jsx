@@ -1,7 +1,7 @@
 // Import the useState hook from React
 import { useState, React } from "react";
 import "../styles/Contact.css";
-import emailjs from '@emailjs/browser';
+import emailjs from "@emailjs/browser";
 
 // Define the Contact component
 export default function Contact() {
@@ -11,7 +11,7 @@ export default function Contact() {
     email: "",
     message: "",
   });
-  
+
   // Setting the State of checkEmail, CheckName ,and CheckMessage to false
   const [checkEmail, setCheckEmail] = useState(false);
   const [CheckName, setCheckName] = useState(false);
@@ -25,7 +25,7 @@ export default function Contact() {
       [name]: value,
     });
   };
-  
+
   // Handle form submission
   const handleSubmit = () => {
     // Regular expression for email validation
@@ -38,13 +38,14 @@ export default function Contact() {
     } else {
       setCheckEmail(false);
     }
-
+    // validate if first name is present
     if (!form.firstName) {
       setCheckName(true);
     } else {
       setCheckName(false);
     }
 
+    // validate if there is a message present
     if (!form.message) {
       setCheckMessage(true);
     } else {
@@ -52,34 +53,27 @@ export default function Contact() {
     }
 
     if (isValid && form.firstName && form.message) {
-
       const service = import.meta.env.VITE_SERVICE;
       const template = import.meta.env.VITE_TEMPLATE;
       const public_key = import.meta.env.VITE_PUBLIC;
 
-      console.log("service: "+ service)
-      const templateParams =
-      {
+      const templateParams = {
         from_name: form.firstName,
         from_email: form.email,
-        to_name: 'Attaplumbing',
-        message: form.message
-      }
+        to_name: "Attaplumbing",
+        message: form.message,
+      };
 
-
-      emailjs.send(service, template, templateParams, public_key)
-        .then(
-          (response) => {
-            console.log('SUCCESS!', response);
-
-          })
-        .catch(
-          (error) => {
-            console.log('FAILED...', error);
-          },
-        );
+      emailjs
+        .send(service, template, templateParams, public_key)
+        .then((response) => {
+          console.log("SUCCESS!", response);
+        })
+        .catch((error) => {
+          console.log("FAILED...", error);
+        });
     }
-  };  
+  };
 
   return (
     <form className="container vh-100 pt-3">
