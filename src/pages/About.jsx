@@ -1,5 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import "../styles/About.css";
+import AboutTheCompany from "../components/AboutTheCompany";
 
 export default function About() {
   // Get the current URL path
@@ -8,6 +9,7 @@ export default function About() {
   return (
     <div className="about d-flex justify-content-center align-items-center flex-wrap">
       <div className="container flex my-2">
+        <AboutTheCompany />
         <p>
           <Link
             to="/Contact"

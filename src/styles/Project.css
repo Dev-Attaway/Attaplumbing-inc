@@ -14,7 +14,7 @@
   margin-left: calc(-0.5 * var(--bs-gutter-x));
 }
 
-.portfolio {
+.services {
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -75,7 +75,7 @@
 }
 
 @media screen and (max-width: 1020px) {
-  .portfolio {
+  .services {
     display: flex;
     flex-direction: column;
     height: 100%;
