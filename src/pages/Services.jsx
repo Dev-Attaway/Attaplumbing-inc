@@ -1,5 +1,5 @@
 import ServicesPrimer from "../components/ServicesPrimer";
-import { Link } from "react-router-dom";
+import ServiceOption from "../components/Project";
 import "../styles/Services.css";
 
 // Define the Services component
@@ -10,150 +10,160 @@ export default function Services() {
        has data manually inserted into the properties below
        these properties then used within the project component
     */
-    <div className="services mx-auto">
+
+    <div className="container-fluid mx-auto">
       <ServicesPrimer />
       <div className="p-4">
         <div className="d-flex flex-column">
-          <div className="card w-50 h-25 m-2">
+          <div className="card mb-2">
             <div className="card-body bg-light ">
-              <Link
-                className="service-style"
-                to="/Installations"
-                // This is a conditional (ternary) operator that checks to see if the current page is "Home"
-                // If it is, we set the current page to 'nav-link-active', otherwise we set it to 'nav-link'
-              >
-                Installations
-              </Link>
+              <h3> Installations </h3>
+              <p>
+                <button
+                  className="btn btn-primary"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#contentId0"
+                  aria-expanded="false"
+                  aria-controls="contentId0"
+                >
+                  Show
+                </button>
+              </p>
+              <div className="collapse" id="contentId0">
+                <ServiceOption
+                  title="Installations"
+                  service_primer="If you are experiencing leaks, running out of hot water, or need
+                a new kitchen faucet installed, AttaPlumbing provides expert and
+                reliable solutions. When selecting a team to protect your home
+                and manage essential plumbing repairs, trust our skilled,
+                licensed, and certified plumbing specialists. Chronic leaks and
+                plumbing issues often stem from the system's age and the water
+                pressure entering your home. High water pressure can weaken
+                seals and cause extensive problems throughout the system.
+                Additionally, when older faucets, showerheads, and appliance
+                connections become corroded and start leaking, it is imperative
+                to replace them promptly to prevent further damage to your home.
+                For professional and trustworthy plumbing services, choose
+                AttaPlumbing to ensure your home's plumbing system remains in
+                optimal condition."
+                />
+              </div>
             </div>
           </div>
 
-          <div className="card w-50 h-25 m-2">
+          <div className="card mb-2">
             <div className="card-body bg-light ">
-              <Link
-                className="service-style"
-                to="/Repairs"
-                // This is a conditional (ternary) operator that checks to see if the current page is "Home"
-                // If it is, we set the current page to 'nav-link-active', otherwise we set it to 'nav-link'
-              >
-                Repairs
-              </Link>
+              <h3> Repairs </h3>
+              <p>
+                <button
+                  className="btn btn-primary"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#contentId1"
+                  aria-expanded="false"
+                  aria-controls="contentId1"
+                >
+                  Show
+                </button>
+              </p>
+              <div className="collapse" id="contentId1">
+                <ServiceOption
+                  title="Repairs"
+                  service_primer="If you are experiencing leaks, running out of hot water, or need
+                a new kitchen faucet installed, AttaPlumbing provides expert and
+                reliable solutions. When selecting a team to protect your home
+                and manage essential plumbing repairs, trust our skilled,
+                licensed, and certified plumbing specialists. Chronic leaks and
+                plumbing issues often stem from the system's age and the water
+                pressure entering your home. High water pressure can weaken
+                seals and cause extensive problems throughout the system.
+                Additionally, when older faucets, showerheads, and appliance
+                connections become corroded and start leaking, it is imperative
+                to replace them promptly to prevent further damage to your home.
+                For professional and trustworthy plumbing services, choose
+                AttaPlumbing to ensure your home's plumbing system remains in
+                optimal condition."
+                />
+              </div>
             </div>
           </div>
 
-          <div className="card w-50 h-25 m-2">
-            <div className="card-body bg-light ">
-              <Link
-                className="service-style"
-                to="/HomeRemodelingAdditions"
-                // This is a conditional (ternary) operator that checks to see if the current page is "Home"
-                // If it is, we set the current page to 'nav-link-active', otherwise we set it to 'nav-link'
-              >
-                Home Remodeling & Additions
-              </Link>
-            </div>
-          </div>
 
-          <div className="card w-50 h-25 m-2">
+          <div className="card mb-2">
             <div className="card-body bg-light ">
-              <Link
-                className="service-style"
-                to="/ConventionalWaterHeaters"
-                // This is a conditional (ternary) operator that checks to see if the current page is "Home"
-                // If it is, we set the current page to 'nav-link-active', otherwise we set it to 'nav-link'
-              >
-                Conventional Water Heaters
-              </Link>
+              <h3> Home Remodeling & Additions </h3>
+              <p>
+                <button
+                  className="btn btn-primary"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#contentId2"
+                  aria-expanded="false"
+                  aria-controls="contentId2"
+                >
+                  Show
+                </button>
+              </p>
+              <div className="collapse" id="contentId2">
+                <ServiceOption
+                  title=" Home Remodeling & Additions"
+                  service_primer="If you are experiencing leaks, running out of hot water, or need
+                a new kitchen faucet installed, AttaPlumbing provides expert and
+                reliable solutions. When selecting a team to protect your home
+                and manage essential plumbing repairs, trust our skilled,
+                licensed, and certified plumbing specialists. Chronic leaks and
+                plumbing issues often stem from the system's age and the water
+                pressure entering your home. High water pressure can weaken
+                seals and cause extensive problems throughout the system.
+                Additionally, when older faucets, showerheads, and appliance
+                connections become corroded and start leaking, it is imperative
+                to replace them promptly to prevent further damage to your home.
+                For professional and trustworthy plumbing services, choose
+                AttaPlumbing to ensure your home's plumbing system remains in
+                optimal condition."
+                />
+              </div>
             </div>
-          </div>
+          </div>     
+          
+          <div className="card mb-2">
+            <div className="card-body bg-light ">
+              <h3> Conventional Water Heaters </h3>
+              <p>
+                <button
+                  className="btn btn-primary"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#contentId3"
+                  aria-expanded="false"
+                  aria-controls="contentId3"
+                >
+                  Show
+                </button>
+              </p>
+              <div className="collapse" id="contentId3">
+                <ServiceOption
+                  title=" Conventional Water Heaters"
+                  service_primer="If you are experiencing leaks, running out of hot water, or need
+                a new kitchen faucet installed, AttaPlumbing provides expert and
+                reliable solutions. When selecting a team to protect your home
+                and manage essential plumbing repairs, trust our skilled,
+                licensed, and certified plumbing specialists. Chronic leaks and
+                plumbing issues often stem from the system's age and the water
+                pressure entering your home. High water pressure can weaken
+                seals and cause extensive problems throughout the system.
+                Additionally, when older faucets, showerheads, and appliance
+                connections become corroded and start leaking, it is imperative
+                to replace them promptly to prevent further damage to your home.
+                For professional and trustworthy plumbing services, choose
+                AttaPlumbing to ensure your home's plumbing system remains in
+                optimal condition."
+                />
+              </div>
+            </div>
+          </div>    
 
-          <div className="card w-50 h-25 m-2">
-            <div className="card-body bg-light ">
-              <Link
-                className="service-style"
-                to="/TanklessWaterHeaters"
-                // This is a conditional (ternary) operator that checks to see if the current page is "Home"
-                // If it is, we set the current page to 'nav-link-active', otherwise we set it to 'nav-link'
-              >
-                Tankless Water Heaters
-              </Link>
-            </div>
-          </div>
-
-          <div className="card w-50 h-25 m-2">
-            <div className="card-body bg-light ">
-              <Link
-                className="service-style"
-                to="/GasLines"
-                // This is a conditional (ternary) operator that checks to see if the current page is "Home"
-                // If it is, we set the current page to 'nav-link-active', otherwise we set it to 'nav-link'
-              >
-                Gas Lines
-              </Link>
-            </div>
-          </div>
-
-          <div className="card w-50 h-25 m-2">
-            <div className="card-body bg-light ">
-              <Link
-                className="service-style"
-                to="/FirePlaceRetrofits"
-                // This is a conditional (ternary) operator that checks to see if the current page is "Home"
-                // If it is, we set the current page to 'nav-link-active', otherwise we set it to 'nav-link'
-              >
-                Fire Place Retrofits
-              </Link>
-            </div>
-          </div>
-
-          <div className="card w-50 h-25 m-2">
-            <div className="card-body bg-light ">
-              <Link
-                className="service-style"
-                to="/ResidentialRepiping"
-                // This is a conditional (ternary) operator that checks to see if the current page is "Home"
-                // If it is, we set the current page to 'nav-link-active', otherwise we set it to 'nav-link'
-              >
-                Residential Repiping
-              </Link>
-            </div>
-          </div>
-
-          <div className="card w-50 h-25 m-2">
-            <div className="card-body bg-light ">
-              <Link
-                className="service-style"
-                to="/WaterTreatment"
-                // This is a conditional (ternary) operator that checks to see if the current page is "Home"
-                // If it is, we set the current page to 'nav-link-active', otherwise we set it to 'nav-link'
-              >
-                Water Treatment
-              </Link>
-            </div>
-          </div>
-          <div className="card w-50 h-25 m-2">
-            <div className="card-body bg-light ">
-              <Link
-                className="service-style"
-                to="/GarbageDisposalRepair"
-                // This is a conditional (ternary) operator that checks to see if the current page is "Home"
-                // If it is, we set the current page to 'nav-link-active', otherwise we set it to 'nav-link'
-              >
-                Garbage Disposal Repair
-              </Link>
-            </div>
-          </div>
-          <div className="card w-50 h-25 m-2">
-            <div className="card-body bg-light ">
-              <Link
-                className="service-style"
-                to="/SewerRepair"
-                // This is a conditional (ternary) operator that checks to see if the current page is "Home"
-                // If it is, we set the current page to 'nav-link-active', otherwise we set it to 'nav-link'
-              >
-                Sewer Repair
-              </Link>
-            </div>
-          </div>
         </div>
       </div>
     </div>
