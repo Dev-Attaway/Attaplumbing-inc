@@ -1,12 +1,14 @@
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
+
 import "../styles/Project.css";
 
 // Define the Project component
-function Project({ title, image, projectLink, githubLink }) {
+function ServiceOption({ title, service_primer, projectLink, githubLink }) {
   // Add touch event listeners to handle hover effects on touch devices
   useEffect(() => {
     // Select the project element
-    const element = document.querySelector(".project");
+    const element = document.querySelector(".option");
 
     // Function to handle touchstart event
     const handleTouchStart = () => {
@@ -33,19 +35,51 @@ function Project({ title, image, projectLink, githubLink }) {
 
   // Render the Project component
   return (
-    <div className="project mx-3 mb-3 rounded-top">
-      <h3>
-        <a href={projectLink} className="project-link">
-          {title}
-        </a>
-        <a href={githubLink} target="_blank" rel="noopener noreferrer">
-          <img src="github-icon.png" alt="GitHub" className="gitHub-image" />
-        </a>
-      </h3>
+    <div className="option services-child-page">
+      <div className="card">
+        <div className="row g-0 justify-content-center">
+          <div className="col-md-4">
+            <img
+              src="default.png"
+              className="img-fluid rounded mx-auto d-block"
+              alt="..."
+            />
+          </div>
 
-      <img src={image} alt="Project Image" className="responsive-image" />
+          <div className="col-md-8">
+            <div className="card-body">
+              <h5 className="card-title">{title}</h5>
+              <p className="card-text d-flex">{service_primer}</p>
+
+              <Link
+                to="/Contact"
+                style={{
+                  display: "inline-block",
+                }}
+              >
+                <button type="button" className="btn btn-primary">
+                  Contact us for a Quote
+                </button>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+
+    // <div className="project mx-3 mb-3 rounded-top">
+    //   <h3>
+    //     <a href={projectLink} className="project-link">
+    //       {title}
+    //     </a>
+    //     <a href={githubLink} target="_blank" rel="noopener noreferrer">
+    //       <img src="github-icon.png" alt="GitHub" className="gitHub-image" />
+    //     </a>
+    //   </h3>
+
+    //   <img src={image} alt="Project Image" className="responsive-image" />
+    // </div>
   );
 }
 
-export default Project;
+export default ServiceOption;
