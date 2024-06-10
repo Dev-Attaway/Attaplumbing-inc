@@ -15,17 +15,6 @@ import Resume from "./pages/Resume";
 import Contact from "./pages/Contact";
 import About from "./pages/About";
 import Services from "./pages/Services";
-import Installations from "./pages/Installations";
-import Repairs from "./pages/Repairs";
-import HomeRemodelingAdditions from "./pages/HomeRemodelingAdditions";
-import ConventionalWaterHeaters from "./pages/ConventionalWaterHeaters";
-import TanklessWaterHeaters from "./pages/TanklessWaterHeaters";
-import GasLines from "./pages/GasLines";
-import FirePlaceRetrofits from "./pages/FirePlaceRetrofits";
-import ResidentialRepiping from "./pages/ResidentialRepiping";
-import WaterTreatment from "./pages/WaterTreatment";
-import GarbageDisposalRepair from "./pages/GarbageDisposalRepair";
-import SewerRepair from "./pages/SewerRepair";
 
 // Define the accessible routes, and which components respond to which URL
 const router = createBrowserRouter([
@@ -49,50 +38,6 @@ const router = createBrowserRouter([
       {
         path: "/Resume", // Resume path
         element: <Resume />, // Render the Resume component for the Resume path
-      },
-      {
-        path: "/Installations", // Resume path
-        element: <Installations />, // Render the Resume component for the Resume path
-      },
-      {
-        path: "/Repairs", // Resume path
-        element: <Repairs />, // Render the Resume component for the Resume path
-      },
-      {
-        path: "/HomeRemodelingAdditions", // Resume path
-        element: <HomeRemodelingAdditions />, // Render the Resume component for the Resume path
-      },
-      {
-        path: "/ConventionalWaterHeaters", // Resume path
-        element: <ConventionalWaterHeaters />, // Render the Resume component for the Resume path
-      },
-      {
-        path: "/TanklessWaterHeaters", // Resume path
-        element: <TanklessWaterHeaters />, // Render the Resume component for the Resume path
-      },
-      {
-        path: "/GasLines", // Resume path
-        element: <GasLines />, // Render the Resume component for the Resume path
-      },
-      {
-        path: "/FirePlaceRetrofits", // Resume path
-        element: <FirePlaceRetrofits />, // Render the Resume component for the Resume path
-      },
-      {
-        path: "/ResidentialRepiping", // Resume path
-        element: <ResidentialRepiping />, // Render the Resume component for the Resume path
-      },
-      {
-        path: "/WaterTreatment", // Resume path
-        element: <WaterTreatment />, // Render the Resume component for the Resume path
-      },
-      {
-        path: "/GarbageDisposalRepair", // Resume path
-        element: <GarbageDisposalRepair />, // Render the Resume component for the Resume path
-      },
-      {
-        path: "/SewerRepair", // Resume path
-        element: <SewerRepair />, // Render the Resume component for the Resume path
       },
     ],
   },
