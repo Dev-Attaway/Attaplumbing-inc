@@ -57,7 +57,7 @@ function ServiceOption({ title, service_primer, projectLink, githubLink }) {
                   display: "inline-block",
                 }}
               >
-                <button type="button" className="btn btn-primary">
+                <button type="button" className="btn btn-custom fw-medium">
                   Contact us for a Quote
                 </button>
               </Link>
@@ -67,18 +67,6 @@ function ServiceOption({ title, service_primer, projectLink, githubLink }) {
       </div>
     </div>
 
-    // <div className="project mx-3 mb-3 rounded-top">
-    //   <h3>
-    //     <a href={projectLink} className="project-link">
-    //       {title}
-    //     </a>
-    //     <a href={githubLink} target="_blank" rel="noopener noreferrer">
-    //       <img src="github-icon.png" alt="GitHub" className="gitHub-image" />
-    //     </a>
-    //   </h3>
-
-    //   <img src={image} alt="Project Image" className="responsive-image" />
-    // </div>
   );
 }
 

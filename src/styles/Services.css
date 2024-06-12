@@ -1,12 +1,17 @@
+.btn-custom {
+  background-color: var(--ivory);
+  border-color: var(--attaplumbing-red);
+  color: var(--onyx);
+}
+
+.btn-custom:hover {
+  background-color: var(--attaplumbing-red);
+}
+
 .service-style {
   text-decoration: none;
   color: black;
   overflow: hidden;
-}
-
-.service-style:hover {
-  text-decoration: solid;
-  color: blue;
 }
 
 .service-style:active {

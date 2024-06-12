@@ -1,5 +1,5 @@
 import ServicesPrimer from "../components/ServicesPrimer";
-import ServiceOption from "../components/Project";
+import ServiceOption from "../components/ServiceOption";
 import "../styles/Services.css";
 
 // Define the Services component
@@ -20,7 +20,7 @@ export default function Services() {
               <h3> Installations </h3>
               <p>
                 <button
-                  className="btn btn-primary"
+                  className="btn btn-custom"
                   type="button"
                   data-bs-toggle="collapse"
                   data-bs-target="#contentId0"
@@ -57,7 +57,7 @@ export default function Services() {
               <h3> Repairs </h3>
               <p>
                 <button
-                  className="btn btn-primary"
+                  className="btn btn-custom"
                   type="button"
                   data-bs-toggle="collapse"
                   data-bs-target="#contentId1"
@@ -94,7 +94,7 @@ export default function Services() {
               <h3> Home Remodeling & Additions </h3>
               <p>
                 <button
-                  className="btn btn-primary"
+                  className="btn btn-custom"
                   type="button"
                   data-bs-toggle="collapse"
                   data-bs-target="#contentId2"
@@ -131,7 +131,7 @@ export default function Services() {
               <h3> Conventional Water Heaters </h3>
               <p>
                 <button
-                  className="btn btn-primary"
+                  className="btn btn-custom"
                   type="button"
                   data-bs-toggle="collapse"
                   data-bs-target="#contentId3"
@@ -168,7 +168,7 @@ export default function Services() {
               <h3> Tankless Water Heaters </h3>
               <p>
                 <button
-                  className="btn btn-primary"
+                  className="btn btn-custom"
                   type="button"
                   data-bs-toggle="collapse"
                   data-bs-target="#contentId4"
@@ -205,7 +205,7 @@ export default function Services() {
               <h3> Fire Place Retrofits </h3>
               <p>
                 <button
-                  className="btn btn-primary"
+                  className="btn btn-custom"
                   type="button"
                   data-bs-toggle="collapse"
                   data-bs-target="#contentId5"
@@ -242,7 +242,7 @@ export default function Services() {
               <h3> Residential Repiping </h3>
               <p>
                 <button
-                  className="btn btn-primary"
+                  className="btn btn-custom"
                   type="button"
                   data-bs-toggle="collapse"
                   data-bs-target="#contentId6"
@@ -279,7 +279,7 @@ export default function Services() {
               <h3> Water Treatment </h3>
               <p>
                 <button
-                  className="btn btn-primary"
+                  className="btn btn-custom"
                   type="button"
                   data-bs-toggle="collapse"
                   data-bs-target="#contentId7"
@@ -316,7 +316,7 @@ export default function Services() {
               <h3> Garbage Disposal Repair & Replace </h3>
               <p>
                 <button
-                  className="btn btn-primary"
+                  className="btn btn-custom"
                   type="button"
                   data-bs-toggle="collapse"
                   data-bs-target="#contentId8"
@@ -353,7 +353,7 @@ export default function Services() {
               <h3> Sewer Repair </h3>
               <p>
                 <button
-                  className="btn btn-primary"
+                  className="btn btn-custom"
                   type="button"
                   data-bs-toggle="collapse"
                   data-bs-target="#contentId9"
