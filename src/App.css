@@ -1,10 +1,9 @@
 /* SCSS RGB */
 :root {
-  --lapis-lazuli: rgba(51, 101, 138, 1);
-  --carolina-blue: rgba(134, 187, 216, 1);
-  --charcoal: rgba(47, 72, 88, 1);
-  --dutch-white: rgb(235, 241, 245);
-  --tomato: rgba(245, 93, 62, 1);
+--steel-blue: #3f88c5ff;
+  --ivory: rgb(255, 255, 255);;
+  --onyx: #393e41ff;
+  --attaplumbing-red: #fe001aff;
 }
 
 /* SCSS Gradient */
@@ -24,13 +23,13 @@ main {
 }
 .nav-tabs .nav-link.active {
   background: rgb(255, 255, 255);
-  border-color: var(--carolina-blue);
+  border-color: var(--attaplumbing-red);
   box-shadow: none;
 }
 
 .nav {
   background: rgb(255, 255, 255);
-  border-color: var(--carolina-blue);
+  border-color: var(--attaplumbing-red);
   justify-content: flex-end;
 }
 
@@ -39,6 +38,6 @@ main {
 }
 
 .nav-tabs .nav-link:hover {
-  border-color: var(--carolina-blue);
-  box-shadow: 2px 2px 5px var(--charcoal);
+  border-color: var(--attaplumbing-red);
+  box-shadow: 2px 2px 5px var(--attaplumbing-red);
 }

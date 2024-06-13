@@ -1,6 +1,5 @@
 // Import the useState hook from React
 import { useState, React } from "react";
-import "../styles/Contact.css";
 import emailjs from "@emailjs/browser";
 
 // Define the Contact component
