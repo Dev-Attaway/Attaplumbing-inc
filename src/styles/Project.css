@@ -6,7 +6,7 @@
 
 .btn-custom:hover {
   background-color: var(--attaplumbing-red);
-    color: var(--onyx);
+  color: var(--onyx);
 }
 
 .services {

@@ -42,11 +42,13 @@ function NavTabs() {
       </li>
       <li className="nav-item">
         <Link
-          to="/Resume"
+          to="/Reviews"
           // Check to see if the currentPage is `Contact`, and if so we use the active link class from bootstrap. Otherwise, we set it to a normal nav-link
-          className={currentPage === "/Resume" ? "nav-link active" : "nav-link"}
+          className={
+            currentPage === "/Reviews" ? "nav-link active" : "nav-link"
+          }
         >
-          Resume
+          Reviews
         </Link>
       </li>
     </ul>

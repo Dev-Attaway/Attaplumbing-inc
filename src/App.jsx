@@ -1,5 +1,6 @@
 // Import the Outlet component from 'react-router-dom' which is responsible for rendering child routes
 import { Outlet } from "react-router-dom";
+import { useState } from "react";
 
 // Import your custom components for navigation, footer, header, and CSS file
 import Nav from "./components/Navigation";
@@ -15,12 +16,11 @@ function App() {
       <Header /> {/* Render the header component */}
       <Nav /> {/* Render the navigation component */}
       <main>
-        <Outlet />{" "}
+        <Outlet />
         {/* Outlet component renders child routes based on the URL */}
         <Footer /> {/* Render the footer component */}
       </main>
     </>
   );
 }
-
 export default App; // Export the App component for use in other parts of your application

@@ -1,37 +1,36 @@
-import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
-import "../styles/Project.css";
+import "../styles/Services.css";
 
 // Define the Project component
 function ServiceOption({ title, service_primer, projectLink, githubLink }) {
   // Add touch event listeners to handle hover effects on touch devices
-  useEffect(() => {
-    // Select the project element
-    const element = document.querySelector(".option");
+  // useEffect(() => {
+  //   // Select the project element
+  //   const element = document.querySelector(".option");
 
-    // Function to handle touchstart event
-    const handleTouchStart = () => {
-      element.classList.add("hovered"); // Add 'hovered' class on touchstart
-    };
+  //   // Function to handle touchstart event
+  //   const handleTouchStart = () => {
+  //     element.classList.add("hovered"); // Add 'hovered' class on touchstart
+  //   };
 
-    // Function to handle touchend event
-    const handleTouchEnd = () => {
-      element.classList.remove("hovered"); // Remove 'hovered' class on touchend
-    };
+  //   // Function to handle touchend event
+  //   const handleTouchEnd = () => {
+  //     element.classList.remove("hovered"); // Remove 'hovered' class on touchend
+  //   };
 
-    // Add touchstart event listener
-    element.addEventListener("touchstart", handleTouchStart);
+  //   // Add touchstart event listener
+  //   element.addEventListener("touchstart", handleTouchStart);
 
-    // Add touchend event listener
-    element.addEventListener("touchend", handleTouchEnd);
+  //   // Add touchend event listener
+  //   element.addEventListener("touchend", handleTouchEnd);
 
-    // Cleanup function to remove event listeners on component unmount
-    return () => {
-      element.removeEventListener("touchstart", handleTouchStart);
-      element.removeEventListener("touchend", handleTouchEnd);
-    };
-  }, []); // Run this effect only once after the component mounts
+  //   // Cleanup function to remove event listeners on component unmount
+  //   return () => {
+  //     element.removeEventListener("touchstart", handleTouchStart);
+  //     element.removeEventListener("touchend", handleTouchEnd);
+  //   };
+  // }, []); // Run this effect only once after the component mounts
 
   // Render the Project component
   return (
@@ -66,7 +65,6 @@ function ServiceOption({ title, service_primer, projectLink, githubLink }) {
         </div>
       </div>
     </div>
-
   );
 }
 
