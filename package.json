@@ -5,16 +5,19 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "start": "vite",
+    "start": "vite  && node server.js",
     "build": "vite build",
     "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
+    "develop": "concurrently \"cd server && pnpm run watch\" \"cd client && pnpm run dev\"",
     "format": "pnpm exec prettier . --write"
   },
   "dependencies": {
     "@emailjs/browser": "^4.3.3",
     "bootstrap": "^5.2.3",
+    "cors": "^2.8.5",
     "dotenv": "^16.4.5",
+    "express": "^4.19.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.11.1"

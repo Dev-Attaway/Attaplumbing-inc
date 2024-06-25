@@ -111,10 +111,7 @@ function AboutTheCompany() {
           />
           <p className="p-2 pt-4">
             Or through our&nbsp;
-            <Link
-              style={{ textDecoration: "none" }}
-              to="/Contact"
-            >
+            <Link style={{ textDecoration: "none" }} to="/Contact">
               Contact Page
             </Link>
           </p>

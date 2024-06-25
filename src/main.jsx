@@ -11,7 +11,7 @@ import "bootstrap/dist/js/bootstrap.min.js";
 // Import various page components
 import App from "./App";
 import Error from "./pages/Error";
-import Resume from "./pages/Resume";
+import Reviews from "./pages/Reviews";
 import Contact from "./pages/Contact";
 import About from "./pages/About";
 import Services from "./pages/Services";
@@ -36,8 +36,8 @@ const router = createBrowserRouter([
         element: <Contact />, // Render the Contact component for the Contact path
       },
       {
-        path: "/Resume", // Resume path
-        element: <Resume />, // Render the Resume component for the Resume path
+        path: "/Reviews", // Resume path
+        element: <Reviews />, // Render the Resume component for the Resume path
       },
     ],
   },

@@ -6,6 +6,9 @@
 
 .btn-custom:hover {
   background-color: var(--attaplumbing-red);
+  color: var(--ivory);
+  text-shadow: 1px 1px 0px var(--onyx);
+  box-shadow: 10px 5px 5px var(--onyx);
 }
 
 .service-style {
@@ -14,6 +17,9 @@
   overflow: hidden;
 }
 
-.service-style:active {
-  text-decoration: underline;
+.btn-custom:active {
+  text-decoration: none;
+  background-color: var(--ivory);
+  border-color: var(--attaplumbing-red);
+  color: var(--onyx);
 }
