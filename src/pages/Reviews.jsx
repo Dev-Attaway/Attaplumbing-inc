@@ -19,45 +19,45 @@ export default function Reviews() {
         case 0:
           setStarState("./public/yelp-stars/Review_Ribbon_medium_20_0.png");
           break;
-        
+
         case 0.5:
           setStarState();
           break;
-        
+
         case 1:
           setStarState();
           break;
-        
+
         case 1.5:
           setStarState();
           break;
-        
+
         case 2:
           setStarState();
           break;
-        
+
         case 2.5:
           setStarState();
           break;
-        
+
         case 3:
           setStarState();
           break;
-        
+
         case 3.5:
           setStarState();
           break;
-        
+
         case 4:
           setStarState();
           break;
-        
+
         case 4.5:
           setStarState();
           break;
-        
+
         case 5:
-          setStarState('yelp-stars/Review_Ribbon_medium_20_5.png');
+          setStarState("yelp-stars/Review_Ribbon_medium_20_5.png");
           break;
       }
     };
@@ -91,7 +91,7 @@ export default function Reviews() {
     };
     fetchYelpData();
     setYelpStart();
-  },[]);
+  }, []);
 
   // will display an error to the user if data isn't fetched
   if (error) return <div>Error: {error.message}</div>;
