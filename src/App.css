@@ -19,25 +19,20 @@
   );
 }
 main {
-  background: rgb(255, 255, 255);
-}
-.nav-tabs .nav-link.active {
-  background: rgb(255, 255, 255);
-  border-color: var(--attaplumbing-red);
-  box-shadow: none;
+  background: #ffffff;
+  margin-top: 1rem;
+  /* Adjust this based on your header height */
 }
 
-.nav {
-  background: rgb(255, 255, 255);
-  border-color: var(--attaplumbing-red);
-  justify-content: flex-end;
+.header {
+  position: relative;
+  transition: all 0.3s ease;
 }
 
-.nav-link {
-  color: var(--charcoal);
-}
-
-.nav-tabs .nav-link:hover {
-  border-color: var(--attaplumbing-red);
-  box-shadow: 2px 2px 5px var(--attaplumbing-red);
+.header.sticky {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
 }

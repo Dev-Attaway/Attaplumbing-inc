@@ -33,14 +33,14 @@ export default function Services() {
               <h3> Installations </h3>
               <p>
                 <button
-                  onClick={() => handleButtonClick(1)}
+                  onClick={() => handleButtonClick("btn-1")}
                   className="btn btn-custom fw-medium"
                   type="button"
                   data-bs-toggle="collapse"
                   data-bs-target="#contentId0"
                   aria-expanded="false"
                   aria-controls="contentId0"
-                  id="1"
+                  id="btn-1"
                 >
                   Show
                 </button>
@@ -59,14 +59,14 @@ export default function Services() {
               <h3> Repairs </h3>
               <p>
                 <button
-                  onClick={() => handleButtonClick(2)}
+                  onClick={() => handleButtonClick("btn-2")}
                   className="btn btn-custom fw-medium"
                   type="button"
                   data-bs-toggle="collapse"
                   data-bs-target="#contentId1"
                   aria-expanded="false"
                   aria-controls="contentId1"
-                  id="2"
+                  id="btn-2"
                 >
                   Show
                 </button>
@@ -85,14 +85,14 @@ export default function Services() {
               <h3> Home Remodeling & Additions </h3>
               <p>
                 <button
-                  onClick={() => handleButtonClick(3)}
+                  onClick={() => handleButtonClick("btn-3")}
                   className="btn btn-custom fw-medium"
                   type="button"
                   data-bs-toggle="collapse"
                   data-bs-target="#contentId2"
                   aria-expanded="false"
                   aria-controls="contentId2"
-                  id="3"
+                  id="btn-3"
                 >
                   Show
                 </button>
@@ -111,14 +111,14 @@ export default function Services() {
               <h3> Conventional Water Heaters </h3>
               <p>
                 <button
-                  onClick={() => handleButtonClick(4)}
+                  onClick={() => handleButtonClick("btn-4")}
                   className="btn btn-custom fw-medium"
                   type="button"
                   data-bs-toggle="collapse"
                   data-bs-target="#contentId3"
                   aria-expanded="false"
                   aria-controls="contentId3"
-                  id="4"
+                  id="btn-4"
                 >
                   Show
                 </button>
@@ -137,14 +137,14 @@ export default function Services() {
               <h3> Tankless Water Heaters </h3>
               <p>
                 <button
-                  onClick={() => handleButtonClick(5)}
+                  onClick={() => handleButtonClick("btn-5")}
                   className="btn btn-custom fw-medium"
                   type="button"
                   data-bs-toggle="collapse"
                   data-bs-target="#contentId4"
                   aria-expanded="false"
                   aria-controls="contentId4"
-                  id="5"
+                  id="btn-5"
                 >
                   Show
                 </button>
@@ -163,14 +163,14 @@ export default function Services() {
               <h3> Fire Place Retrofits </h3>
               <p>
                 <button
-                  onClick={() => handleButtonClick(6)}
+                  onClick={() => handleButtonClick("btn-6")}
                   className="btn btn-custom fw-medium"
                   type="button"
                   data-bs-toggle="collapse"
                   data-bs-target="#contentId5"
                   aria-expanded="false"
                   aria-controls="contentId5"
-                  id="6"
+                  id="btn-6"
                 >
                   Show
                 </button>
@@ -189,14 +189,14 @@ export default function Services() {
               <h3> Natural Gas Retrofits </h3>
               <p>
                 <button
-                  onClick={() => handleButtonClick(7)}
+                  onClick={() => handleButtonClick("btn-7")}
                   className="btn btn-custom fw-medium"
                   type="button"
                   data-bs-toggle="collapse"
                   data-bs-target="#contentId6"
                   aria-expanded="false"
                   aria-controls="contentId6"
-                  id="7"
+                  id="btn-7"
                 >
                   Show
                 </button>
@@ -215,14 +215,14 @@ export default function Services() {
               <h3> Commercial & Residential Emergency Services </h3>
               <p>
                 <button
-                  onClick={() => handleButtonClick(8)}
+                  onClick={() => handleButtonClick("btn-8")}
                   className="btn btn-custom fw-medium"
                   type="button"
                   data-bs-toggle="collapse"
                   data-bs-target="#contentId7"
                   aria-expanded="false"
                   aria-controls="contentId7"
-                  id="8"
+                  id="btn-8"
                 >
                   Show
                 </button>

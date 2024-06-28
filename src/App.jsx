@@ -1,26 +1,30 @@
-// Import the Outlet component from 'react-router-dom' which is responsible for rendering child routes
+import React, { useState, useEffect } from "react";
 import { Outlet } from "react-router-dom";
-import { useState } from "react";
-
-// Import your custom components for navigation, footer, header, and CSS file
-import Nav from "./components/Navigation";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
-import "../src/App.css"; // Import your CSS file for styling
+import "../src/App.css";
 
-// Define the main App component
 function App() {
-  // The App component renders the header, navigation, main content (determined by Outlet), and footer
+  const [isSticky, setSticky] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setSticky(window.scrollY > 0);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <>
-      <Header /> {/* Render the header component */}
-      <Nav /> {/* Render the navigation component */}
+      <Header className={isSticky ? "sticky" : ""} id="myHeader" />
       <main>
         <Outlet />
-        {/* Outlet component renders child routes based on the URL */}
-        <Footer /> {/* Render the footer component */}
+        <Footer />
       </main>
     </>
   );
 }
-export default App; // Export the App component for use in other parts of your application
+
+export default App;

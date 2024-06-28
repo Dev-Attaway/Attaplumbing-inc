@@ -2,6 +2,7 @@
 import { useState, React } from "react";
 import emailjs from "@emailjs/browser";
 import "../styles/Contact.css";
+import ContactTab from "../components/ContactTab";
 
 // Define the Contact component
 export default function Contact() {
@@ -19,7 +20,6 @@ export default function Contact() {
   const [CheckMessage, setCheckMessage] = useState(false);
   const [EmailSuccess, setEmailSuccess] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-
 
   // Handle input changes in the form fields
   const handleInputChange = (e) => {
@@ -87,14 +87,13 @@ export default function Contact() {
         .catch((error) => {
           console.log("FAILED...", error);
         });
-    }
-    else { 
+    } else {
       setEmailSuccess(false);
     }
   };
 
   return (
-    <div className="container vh-100 pt-3">
+    <div className="container vh-100">
       <svg xmlns="http://www.w3.org/2000/svg" className="d-none">
         <symbol id="check-circle-fill" viewBox="0 0 16 16">
           <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
@@ -104,120 +103,129 @@ export default function Contact() {
           <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
         </symbol>
       </svg>
-      <form>
-        <div className="form-group">
-          <label htmlFor="firstName">First name:</label>
-          <input
-            type="text"
-            id="firstName"
-            value={form.firstName}
-            onChange={handleInputChange}
-            name="firstName"
-            className="form-control m-2"
-          />
-          {CheckName && <p className="text-danger">Invalid name submitted!</p>}
-        </div>
 
-        <div className="form-group">
-          <label htmlFor="email">Your Email:</label>
-          <input
-            type="email"
-            id="email"
-            value={form.email}
-            onChange={handleInputChange}
-            name="email"
-            className="form-control m-2"
-          />
-          {CheckEmail && (
-            <p className="text-danger">Invalid email submitted!</p>
-          )}
-        </div>
-
-        <div className="form-group">
-          <label htmlFor="message">Message:</label>
-          <textarea
-            id="message"
-            value={form.message}
-            onChange={handleInputChange}
-            name="message"
-            className="form-control m-2"
-            rows={7}
-          ></textarea>
-          {CheckMessage && (
-            <p className="text-danger">Invalid message submitted!</p>
-          )}
-        </div>
-
-        <button
-          className="btn btn-custom m-3"
-          type="button"
-          data-bs-toggle="offcanvas"
-          data-bs-target="#offcanvasTop"
-          aria-controls="offcanvasTop"
-          onClick={handleSubmit}
-        >
-          Submit
-        </button>
-        <div
-          className="offcanvas offcanvas-top"
-          tabIndex="-1"
-          id="offcanvasTop"
-          aria-labelledby="offcanvasTopLabel"
-          style={{ height: "35vh" }}
-        >
-          <div className="offcanvas-header">
-            <h5 className="offcanvas-title" id="offcanvasTopLabel">
-              <img
-                src="logo-NO-lisc.png"
-                alt="Attaplumbing company logo"
-                style={{ maxWidth: "25%", minWidth: "10rem" }}
-              />
-            </h5>
-            <button
-              type="button"
-              className="btn-close"
-              data-bs-dismiss="offcanvas"
-              aria-label="Close"
-            ></button>
+      <div>
+        <form>
+          <div className="form-group">
+            <label htmlFor="firstName">First name:</label>
+            <input
+              type="text"
+              id="firstName"
+              value={form.firstName}
+              onChange={handleInputChange}
+              name="firstName"
+              className="form-control m-2"
+            />
+            {CheckName && (
+              <p className="text-danger">Invalid name submitted!</p>
+            )}
           </div>
 
-          {EmailSuccess && (
-            <div className="offcanvas-body">
-              <div
-                className="alert alert-success d-inline-flex align-items-center flex-wrap"
-                role="alert"
-              >
-                <svg
-                  className="flex-shrink-0 d-flex me-2"
-                  style={{ maxWidth: "2rem", height: "2rem" }}
-                  aria-label="Success:"
-                >
-                  <use xlinkHref="#check-circle-fill" />
-                </svg>
-                <div>Your message was sent, Thank you!</div>
-              </div>
-            </div>
-          )}
+          <div className="form-group">
+            <label htmlFor="email">Your Email:</label>
+            <input
+              type="email"
+              id="email"
+              value={form.email}
+              onChange={handleInputChange}
+              name="email"
+              className="form-control m-2"
+            />
+            {CheckEmail && (
+              <p className="text-danger">Invalid email submitted!</p>
+            )}
+          </div>
 
-          {EmailSuccess === false && !isLoading && (
-            <div className="offcanvas-body">
-              <div
-                className="alert alert-danger d-inline-flex align-items-center flex-wrap"
-                role="alert"
-              >
-                <svg
-                  className="flex-shrink-0 d-flex me-2"
-                  style={{ maxWidth: "2rem", height: "2rem" }}
-                  aria-label="Fail:"
-                >
-                  <use xlinkHref="#exclamation-triangle-fill" />
-                </svg>
-                <div>Failed to send message. Please check your details and try again.</div>
-              </div>
+          <div className="form-group">
+            <label htmlFor="message">Message:</label>
+            <textarea
+              id="message"
+              value={form.message}
+              onChange={handleInputChange}
+              name="message"
+              className="form-control m-2"
+              rows={7}
+            ></textarea>
+            {CheckMessage && (
+              <p className="text-danger">Invalid message submitted!</p>
+            )}
+          </div>
+
+          <button
+            className="btn btn-custom m-3"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasTop"
+            aria-controls="offcanvasTop"
+            onClick={handleSubmit}
+          >
+            Submit
+          </button>
+          <div
+            className="offcanvas offcanvas-top"
+            tabIndex="-1"
+            id="offcanvasTop"
+            aria-labelledby="offcanvasTopLabel"
+            style={{ height: "35vh" }}
+          >
+            <div className="offcanvas-header">
+              <h5 className="offcanvas-title" id="offcanvasTopLabel">
+                <img
+                  src="logo-NO-lisc.png"
+                  alt="Attaplumbing company logo"
+                  style={{ maxWidth: "25%", minWidth: "10rem" }}
+                />
+              </h5>
+              <button
+                type="button"
+                className="btn-close"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+              ></button>
             </div>
-          )}
-        </div>
-      </form>
+
+            {EmailSuccess && (
+              <div className="offcanvas-body">
+                <div
+                  className="alert alert-success d-inline-flex align-items-center flex-wrap"
+                  role="alert"
+                >
+                  <svg
+                    className="flex-shrink-0 d-flex me-2"
+                    style={{ maxWidth: "2rem", height: "2rem" }}
+                    aria-label="Success:"
+                  >
+                    <use xlinkHref="#check-circle-fill" />
+                  </svg>
+                  <div>Your message was sent, Thank you!</div>
+                </div>
+              </div>
+            )}
+
+            {EmailSuccess === false && !isLoading && (
+              <div className="offcanvas-body">
+                <div
+                  className="alert alert-danger d-inline-flex align-items-center flex-wrap"
+                  role="alert"
+                >
+                  <svg
+                    className="flex-shrink-0 d-flex me-2"
+                    style={{ maxWidth: "2rem", height: "2rem" }}
+                    aria-label="Fail:"
+                  >
+                    <use xlinkHref="#exclamation-triangle-fill" />
+                  </svg>
+                  <div>
+                    Failed to send your message. Please check the details and
+                    try again!
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
+        </form>
+        <ContactTab />
+      </div>
     </div>
   );
 }

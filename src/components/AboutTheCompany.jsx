@@ -1,11 +1,12 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import Yelp from "../components/Yelp";
 import "../styles/About.css";
+import ContactTab from "./ContactTab";
 
 function AboutTheCompany() {
   return (
-    <div className="container m-2">
-      <div className="row m-4">
+    <div className="container">
+      <div className="row me-4">
         <div className="col-lg-8 col-md-10 col-sm-12">
           <div
             className="card position-relative shadow-lg bg-body rounded border border-black text-bg-dark"
@@ -18,6 +19,9 @@ function AboutTheCompany() {
               style={{
                 height: "100%",
                 objectFit: "cover",
+                margin: "0",
+                padding: "0",
+                border: "none",
               }}
             />
             <div className="card-img-overlay p-0 py-3 d-flex flex-column justify-content-end">
@@ -47,6 +51,9 @@ function AboutTheCompany() {
               style={{
                 height: "100%",
                 objectFit: "cover",
+                margin: "0",
+                padding: "0",
+                border: "none",
               }}
             />
             <div className="card-img-overlay p-0 py-3 d-flex flex-column justify-content-end">
@@ -76,6 +83,9 @@ function AboutTheCompany() {
               style={{
                 height: "100%",
                 objectFit: "cover",
+                margin: "0",
+                padding: "0",
+                border: "none",
               }}
             />
             <div className="card-img-overlay p-0 py-3 d-flex flex-column justify-content-end">
@@ -91,32 +101,12 @@ function AboutTheCompany() {
           </div>
         </div>
       </div>
-
-      <div className="card m-3 p-3 mx-auto">
-        <div className="card-body">
-          <h5 className="card-title d-flex">
-            Contact
-            <img
-              src="logo-NO-lisc.png"
-              alt="Attaplumbing Company logo"
-              className="ps-2"
-              style={{ maxWidth: "20%", minWidth: "10rem" }}
-            />
-          </h5>
-          <img
-            src="company-phone.png"
-            alt="Company phone"
-            className="ps-2"
-            style={{ maxWidth: "20%", minWidth: "10rem" }}
-          />
-          <p className="p-2 pt-4">
-            Or through our&nbsp;
-            <Link style={{ textDecoration: "none" }} to="/Contact">
-              Contact Page
-            </Link>
-          </p>
+      <div className="row justify-content-end m-4">
+        <div className="col-lg-8 col-md-10 col-sm-12">
+          <Yelp />
         </div>
       </div>
+      <ContactTab />
     </div>
   );
 }
