@@ -2,11 +2,12 @@ import React from "react";
 import Yelp from "../components/Yelp";
 import "../styles/About.css";
 import ContactTab from "./ContactTab";
+import BuildZoom from "./BuildZoom";
 
 function AboutTheCompany() {
   return (
     <div className="container">
-      <div className="row me-4">
+      <div className="row m-4">
         <div className="col-lg-8 col-md-10 col-sm-12">
           <div
             className="card position-relative shadow-lg bg-body rounded border border-black text-bg-dark"
@@ -70,7 +71,7 @@ function AboutTheCompany() {
         </div>
       </div>
 
-      <div className="row justify-content-start m-4">
+      <div className="row m-4">
         <div className="col-lg-8 col-md-10 col-sm-12">
           <div
             className="card shadow-lg bg-body rounded border border-black text-bg-dark"
@@ -101,11 +102,16 @@ function AboutTheCompany() {
           </div>
         </div>
       </div>
-      <div className="row justify-content-end m-4">
-        <div className="col-lg-8 col-md-10 col-sm-12">
+
+      <div className="row justify-content-between m-4">
+        <div className="col-lg-6 col-md-6 col-sm-12">
           <Yelp />
         </div>
+        <div className="col-lg-6 col-md-6 col-sm-12">
+          <BuildZoom />
+        </div>
       </div>
+
       <ContactTab />
     </div>
   );

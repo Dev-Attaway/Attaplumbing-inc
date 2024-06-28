@@ -14,14 +14,13 @@ function ContactTab() {
         <img
           src="logo-NO-lisc.png"
           alt="Attaplumbing Company logo"
-          className="contact-img"
+          className="contact-img mt-1"
           style={{ maxWidth: "20%", minWidth: "10rem" }}
         />
         <img
           src="company-phone.png"
           alt="Company phone"
-          className="contact-img"
-
+          className="contact-img mb-1"
           style={{ maxWidth: "20%", minWidth: "10rem" }}
         />
         <div>
