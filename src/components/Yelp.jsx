@@ -3,10 +3,10 @@ import "../styles/YelpReviews.css";
 
 export default function YelpReviews() {
   return (
-    <div className="p-2 d-inline-flex justify-content-evenly flex-wrap">
+    <div className="p-2 d-flex justify-content-center">
       <div
-        className="shadow card w-50 p-3 m-3 align-self-center"
-        style={{ minWidth: "15rem" }}
+        className="shadow card w-50 p-3 m-3"
+        style={{ minWidth: "15rem", height: "20rem" }}
       >
         <div className="mt-auto p-3 d-inline-flex justify-content-start align-items-baseline flex-wrap">
           <h5>Check out our page on</h5>
