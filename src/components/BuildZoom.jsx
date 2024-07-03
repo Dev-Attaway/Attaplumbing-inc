@@ -3,10 +3,10 @@ import "../styles/BuildZoomReviews.css";
 
 export default function BuildZoomReviews() {
   return (
-    <div className="p-2 d-inline-flex justify-content-evenlyflex-wrap">
+    <div className="p-2 d-flex justify-content-center">
       <div
-        className="shadow card w-50 p-3 m-3 align-self-center"
-        style={{ minWidth: "15rem" }}
+        className="shadow card w-50 p-3 m-3"
+        style={{ minWidth: "15rem", height: "20rem" }}
       >
         <div className="mt-auto p-3 d-flex justify-content-center align-items-center flex-column">
           <h5>Also, checkout our page on</h5>

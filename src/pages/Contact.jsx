@@ -1,8 +1,9 @@
-// Import the useState hook from React
-import { useState, React } from "react";
+// Import the necessary hooks and modules
+import { useState } from "react";
 import emailjs from "@emailjs/browser";
 import "../styles/Contact.css";
 import ContactTab from "../components/ContactTab";
+import ReCAPTCHA from "react-google-recaptcha";
 
 // Define the Contact component
 export default function Contact() {
@@ -13,12 +14,12 @@ export default function Contact() {
     message: "",
   });
 
-  // Setting the State of checkEmail, CheckName ,CheckMessage, EmailSuccess, and isLoading to false
-  // No message has been sent as of this moment
-  const [CheckEmail, setCheckEmail] = useState(false);
-  const [CheckName, setCheckName] = useState(false);
-  const [CheckMessage, setCheckMessage] = useState(false);
-  const [EmailSuccess, setEmailSuccess] = useState(false);
+  // Define state variables for validation and loading states
+  const [checkEmail, setCheckEmail] = useState(false);
+  const [checkName, setCheckName] = useState(false);
+  const [checkMessage, setCheckMessage] = useState(false);
+  const [emailSuccess, setEmailSuccess] = useState(false);
+  const [captchaSuccess, setCaptchaSuccess] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
   // Handle input changes in the form fields
@@ -29,34 +30,20 @@ export default function Contact() {
       [name]: value,
     });
   };
+
   // Handle form submission
   const handleSubmit = () => {
     // Regular expression for email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    const isValid = emailRegex.test(form.email);
+    const isValidEmail = emailRegex.test(form.email);
 
     // Validate form inputs and set validation flags accordingly
-    if (!isValid) {
-      setCheckEmail(true);
-    } else {
-      setCheckEmail(false);
-    }
-    // validate if first name is present
-    if (!form.firstName) {
-      setCheckName(true);
-    } else {
-      setCheckName(false);
-    }
+    setCheckEmail(!isValidEmail);
+    setCheckName(!form.firstName);
+    setCheckMessage(!form.message);
 
-    // validate if there is a message present
-    if (!form.message) {
-      setCheckMessage(true);
-    } else {
-      setCheckMessage(false);
-    }
-
-    if (isValid && form.firstName && form.message) {
-      setIsLoading(true); // Reset loading state
+    if (isValidEmail && form.firstName && form.message) {
+      setIsLoading(true); // Set loading state
 
       const service = import.meta.env.VITE_SERVICE;
       const template = import.meta.env.VITE_TEMPLATE;
@@ -73,8 +60,8 @@ export default function Contact() {
         .send(service, template, templateParams, public_key)
         .then(() => {
           setEmailSuccess(true);
-          // Reset form and validation flags after successful submission
           setIsLoading(false);
+          // Reset form and validation flags after successful submission
           setForm({
             firstName: "",
             email: "",
@@ -86,6 +73,8 @@ export default function Contact() {
         })
         .catch((error) => {
           console.log("FAILED...", error);
+          setEmailSuccess(false);
+          setIsLoading(false);
         });
     } else {
       setEmailSuccess(false);
@@ -116,7 +105,7 @@ export default function Contact() {
               name="firstName"
               className="form-control m-2"
             />
-            {CheckName && (
+            {checkName && (
               <p className="text-danger">Invalid name submitted!</p>
             )}
           </div>
@@ -131,7 +120,7 @@ export default function Contact() {
               name="email"
               className="form-control m-2"
             />
-            {CheckEmail && (
+            {checkEmail && (
               <p className="text-danger">Invalid email submitted!</p>
             )}
           </div>
@@ -146,12 +135,18 @@ export default function Contact() {
               className="form-control m-2"
               rows={7}
             ></textarea>
-            {CheckMessage && (
+            {checkMessage && (
               <p className="text-danger">Invalid message submitted!</p>
             )}
           </div>
 
+          <ReCAPTCHA
+            sitekey={import.meta.env.VITE_RECAPTCHA}
+            onChange={(token) => setCaptchaSuccess(token)}
+          />
+
           <button
+            disabled={!captchaSuccess || isLoading}
             className="btn btn-custom m-3"
             type="button"
             data-bs-toggle="offcanvas"
@@ -161,6 +156,7 @@ export default function Contact() {
           >
             Submit
           </button>
+
           <div
             className="offcanvas offcanvas-top"
             tabIndex="-1"
@@ -184,7 +180,7 @@ export default function Contact() {
               ></button>
             </div>
 
-            {EmailSuccess && (
+            {emailSuccess && (
               <div className="offcanvas-body">
                 <div
                   className="alert alert-success d-inline-flex align-items-center flex-wrap"
@@ -202,7 +198,7 @@ export default function Contact() {
               </div>
             )}
 
-            {EmailSuccess === false && !isLoading && (
+            {emailSuccess === false && !isLoading && (
               <div className="offcanvas-body">
                 <div
                   className="alert alert-danger d-inline-flex align-items-center flex-wrap"
