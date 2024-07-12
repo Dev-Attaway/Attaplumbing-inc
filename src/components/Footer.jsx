@@ -20,18 +20,14 @@ function Footer() {
             href="https://github.com/Dev-Attaway"
             target="_blank"
             rel="noopener noreferrer"
-          >
-            <img src="github-icon.png" alt="GitHub" className="images" />
-          </a>
+          ></a>
         </div>
         <div className="mx-auto">
           <a
             href="https://www.linkedin.com/in/nicholas-attaway-a682a12b9/"
             target="_blank"
             rel="noopener noreferrer"
-          >
-            <img src="linkdn.png" alt="Linkdn" className="images" />
-          </a>
+          ></a>
         </div>
       </div>
     </footer>

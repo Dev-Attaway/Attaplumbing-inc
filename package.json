@@ -10,6 +10,7 @@
     "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "develop": "concurrently \"cd server && pnpm run watch\" \"cd client && pnpm run dev\"",
+    "img-format": "node imagemin.js",
     "format": "pnpm exec prettier . --write"
   },
   "dependencies": {
@@ -17,7 +18,9 @@
     "bootstrap": "^5.2.3",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
-    "express": "^4.19.2",
+    "imagekitio-react": "^4.1.0",
+    "imagemin": "^9.0.0",
+    "imagemin-webp": "^8.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-google-recaptcha": "^3.1.0",

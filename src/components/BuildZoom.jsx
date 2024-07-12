@@ -1,29 +1,35 @@
 import React from "react";
 import "../styles/BuildZoomReviews.css";
+import { IKImage, IKContext } from "imagekitio-react";
 
 export default function BuildZoomReviews() {
   return (
-    <div className="p-2 d-flex justify-content-center">
+    <div className="p-2 justify-content-center">
       <div
-        className="shadow card w-50 p-3 m-3"
-        style={{ minWidth: "15rem", height: "20rem" }}
+        className="shadow car p-3 m-3"
+        style={{ width: "15rem", height: "20rem" }}
       >
-        <div className="mt-auto p-3 d-flex justify-content-center align-items-center flex-column">
+        <div className="mt-auto p-2 justify-content-center align-items-center flex-column">
           <h5>Also, checkout our page on</h5>
           <a
             href={`https://www.buildzoom.com/contractor/atta-plumbing-inc`}
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img
-              src="Buildzoom.png"
-              alt="BuildZoom Logo"
-              className="buildZoom-logo-image"
-            />
+            <IKContext urlEndpoint={import.meta.env.VITE_IMAGEKIT}>
+              <IKImage
+                src="https://ik.imagekit.io/pbq9icsqc/Buildzoom.webp?updatedAt=1720653474213"
+                alt="BuildZoom Logo"
+                className="buildZoom-logo-image"
+                loading="lazy"
+                width="200"
+                height="150"
+              />
+            </IKContext>
           </a>
         </div>
-        <div className="card d-inline-flex">
-          <div className="card-body d-inline-flex justify-content-evenly">
+        <div className="card mb-1">
+          <div className="card-body justify-content-evenly">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="22"
