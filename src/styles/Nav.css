@@ -1,0 +1,28 @@
+.nav-tabs .nav-link.active {
+  background: #ffffff;
+  border-color: var(--attaplumbing-red);
+  box-shadow: none;
+}
+
+.nav {
+  background: #ffffff;
+  border-color: var(--attaplumbing-red);
+  justify-content: flex-end;
+}
+
+.nav-link {
+  color: var(--charcoal);
+}
+
+.nav-tabs .nav-link:hover {
+  border-color: var(--attaplumbing-red);
+  box-shadow: 2px 2px 5px var(--attaplumbing-red);
+}
+
+@media screen and (max-width: 500px) {
+  .nav-tabs .nav-link.active {
+    background: #ffffff;
+    border-color: var(--attaplumbing-red);
+    box-shadow: none;
+  }
+}

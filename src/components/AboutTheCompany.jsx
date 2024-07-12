@@ -9,46 +9,49 @@ function AboutTheCompany() {
   return (
     <div className="container">
       {/* Card Section */}
-      <div className="row m-4 justify-content-center gy-3">
-        <div className="col-md-8 d-flex h-100 justify-content-center">
+      <div className="row justify-content-center gy-3">
+        <div className="h-100">
           <AboutCard
-            imageSrc="vecteezy_ai-generated-beautiful-photography-for-plumbing-services_38813454.png"
+            imageSrc="https://ik.imagekit.io/pbq9icsqc/pexels-wdnet-14953886.webp?updatedAt=1720653473873"
             title="Card title"
             text="This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer."
+            imageWidth="150"
+            imageHeight="150"
           />
         </div>
-        <div className="col-md-8 d-flex h-100 justify-content-center">
+        <div className="h-100">
           <AboutCard
-            imageSrc="pexels-wdnet-14953886.png"
+            imageSrc="https://ik.imagekit.io/pbq9icsqc/pexels-magda-ehlers-pexels-3721272.webp?updatedAt=1720653474324"
             title="Card title"
             text="This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer."
+            imageWidth="150"
+            imageHeight="150"
           />
         </div>
-        <div className="col-md-8 d-flex h-100 justify-content-center">
+        <div className="h-100">
           <AboutCard
-            imageSrc="pexels-thirdman-8470830.png"
+            imageSrc="https://ik.imagekit.io/pbq9icsqc/vecteezy_ai-generated-beautiful-photography-for-plumbing-services_38813454.webp?updatedAt=1720653474196"
             title="Card title"
             text="This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer."
+            imageWidth="150"
+            imageHeight="150"
           />
         </div>
       </div>
 
       {/* Reviews Section */}
-      <div className="row justify-content-center m-4">
-        <div className="col-lg-6 col-md-8 col-sm-10 d-flex justify-content-center">
-          <div style={{ maxWidth: "20rem", height: "25rem" }}>
+      <div className="container reviews">
+        <div className="row justify-content-center">
+          <div className="col d-flex justify-content-center">
             <Yelp />
           </div>
-        </div>
-        <div className="col-lg-6 col-md-8 col-sm-10 d-flex justify-content-center">
-          <div style={{ maxWidth: "20rem", height: "25rem" }}>
+          <div className="col d-flex justify-content-center">
             <BuildZoom />
           </div>
+          <ContactTab />
         </div>
+        {/* Contact Tab */}
       </div>
-
-      {/* Contact Tab */}
-      <ContactTab />
     </div>
   );
 }

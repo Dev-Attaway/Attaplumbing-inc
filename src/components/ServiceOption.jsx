@@ -39,7 +39,7 @@ function ServiceOption({ title, service_primer, projectLink, githubLink }) {
         <div className="row g-0 justify-content-center">
           <div className="col-md-4">
             <img
-              src="default.png"
+              src="default.webp"
               className="img-fluid rounded mx-auto d-block"
               alt="..."
             />

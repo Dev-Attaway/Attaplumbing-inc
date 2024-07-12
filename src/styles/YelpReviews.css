@@ -12,9 +12,6 @@
 .yelp-logo-image {
   transition-property: filter;
   transition-duration: 150ms;
-  max-width: 12rem;
-  height: auto;
-  object-fit: cover;
 }
 
 .yelp-logo-image:hover {

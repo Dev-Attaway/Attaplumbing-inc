@@ -1,9 +1,6 @@
 .buildZoom-logo-image {
   transition-property: filter;
   transition-duration: 150ms;
-  width: 12rem;
-  height: auto;
-  object-fit: cover;
 }
 
 .buildZoom-logo-image:hover {
