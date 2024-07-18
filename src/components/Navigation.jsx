@@ -7,7 +7,7 @@ function NavTabs() {
 
   return (
     <ul className="nav nav-tabs">
-      <li className="nav-item option">
+      <li className="nav-item fw-medium">
         <Link
           to="/"
           // This is a conditional (ternary) operator that checks to see if the current page is "Home"
@@ -17,7 +17,7 @@ function NavTabs() {
           About
         </Link>
       </li>
-      <li className="nav-item option">
+      <li className="nav-item fw-medium">
         <Link
           to="/Services"
           // Check to see if the currentPage is `Services`, and if so we use the active link class from bootstrap. Otherwise, we set it to a normal nav-link
@@ -28,7 +28,7 @@ function NavTabs() {
           Services
         </Link>
       </li>
-      <li className="nav-item option">
+      <li className="nav-item fw-medium">
         <Link
           to="/Contact"
           // Check to see if the currentPage is `Contact`, and if so we use the active link class from bootstrap. Otherwise, we set it to a normal nav-link

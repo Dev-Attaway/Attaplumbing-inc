@@ -1,3 +1,7 @@
+.services-font {
+  font-family: "Roboto", sans-serif;
+}
+
 .btn-custom {
   background-color: var(--ivory);
   border-color: var(--attaplumbing-red);

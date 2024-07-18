@@ -4,6 +4,7 @@ import emailjs from "@emailjs/browser";
 import "../styles/Contact.css";
 import ContactTab from "../components/ContactTab";
 import ReCAPTCHA from "react-google-recaptcha";
+import { IKImage, IKContext } from "imagekitio-react";
 
 // Define the Contact component
 export default function Contact() {
@@ -18,7 +19,7 @@ export default function Contact() {
   const [checkEmail, setCheckEmail] = useState(false);
   const [checkName, setCheckName] = useState(false);
   const [checkMessage, setCheckMessage] = useState(false);
-  const [emailSuccess, setEmailSuccess] = useState(false);
+  const [emailSuccess, setEmailSuccess] = useState(null);
   const [captchaSuccess, setCaptchaSuccess] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -42,7 +43,7 @@ export default function Contact() {
     setCheckName(!form.firstName);
     setCheckMessage(!form.message);
 
-    if (isValidEmail && form.firstName && form.message) {
+    if (isValidEmail && form.firstName && form.message && captchaSuccess) {
       setIsLoading(true); // Set loading state
 
       const service = import.meta.env.VITE_SERVICE;
@@ -70,6 +71,7 @@ export default function Contact() {
           setCheckEmail(false);
           setCheckName(false);
           setCheckMessage(false);
+          setCaptchaSuccess(false); // Reset CAPTCHA
         })
         .catch((error) => {
           console.log("FAILED...", error);
@@ -82,21 +84,13 @@ export default function Contact() {
   };
 
   return (
-    <div className="container-fuild m-2 p-2">
-      <svg xmlns="http://www.w3.org/2000/svg" className="d-none">
-        <symbol id="check-circle-fill" viewBox="0 0 16 16">
-          <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
-        </symbol>
-
-        <symbol id="exclamation-triangle-fill" viewBox="0 0 16 16">
-          <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
-        </symbol>
-      </svg>
-
+    <div className="container-fuild p-4">
       <div>
         <form>
           <div className="form-group">
-            <label htmlFor="firstName">First name:</label>
+            <label htmlFor="firstName" className="font-monospace fs-5">
+              First name:
+            </label>
             <input
               type="text"
               id="firstName"
@@ -111,7 +105,9 @@ export default function Contact() {
           </div>
 
           <div className="form-group">
-            <label htmlFor="email">Your Email:</label>
+            <label htmlFor="email" className="font-monospace fs-5">
+              Your Email:
+            </label>
             <input
               type="email"
               id="email"
@@ -126,7 +122,9 @@ export default function Contact() {
           </div>
 
           <div className="form-group">
-            <label htmlFor="message">Message:</label>
+            <label htmlFor="message" className="font-monospace fs-5">
+              Message:
+            </label>
             <textarea
               id="message"
               value={form.message}
@@ -140,7 +138,7 @@ export default function Contact() {
             )}
           </div>
 
-          <div className="d-flex justify-content-center">
+          <div className="d-flex justify-content-center p-2 m-2">
             <ReCAPTCHA
               sitekey={import.meta.env.VITE_RECAPTCHA}
               onChange={(token) => setCaptchaSuccess(token)}
@@ -167,13 +165,17 @@ export default function Contact() {
             style={{ height: "35vh" }}
           >
             <div className="offcanvas-header">
-              <h5 className="offcanvas-title" id="offcanvasTopLabel">
-                <img
-                  src="logo-NO-lisc.png"
-                  alt="Attaplumbing company logo"
-                  style={{ maxWidth: "25%", minWidth: "10rem" }}
+              <h5 className="offcanvas-title" id="offcanvasTopLabel"></h5>
+              <IKContext urlEndpoint={import.meta.env.VITE_IMAGEKIT}>
+                <IKImage
+                  src="https://ik.imagekit.io/pbq9icsqc/logo-NO-lisc.webp?updatedAt=1720653473902?tr=w-200,h-50"
+                  alt="Attaplumbing Company logo"
+                  loading="lazy"
+                  width="200"
+                  height="50"
+                  className="ms-2"
                 />
-              </h5>
+              </IKContext>
               <button
                 type="button"
                 className="btn-close"
@@ -189,11 +191,12 @@ export default function Contact() {
                   role="alert"
                 >
                   <svg
-                    className="flex-shrink-0 d-flex me-2"
-                    style={{ maxWidth: "2rem", height: "2rem" }}
-                    aria-label="Success:"
+                    className="bi"
+                    width="32"
+                    height="32"
+                    fill="currentColor"
                   >
-                    <use xlinkHref="#check-circle-fill" />
+                    <use href="#check-circle-fill"></use>
                   </svg>
                   <div>Your message was sent, Thank you!</div>
                 </div>
@@ -207,11 +210,12 @@ export default function Contact() {
                   role="alert"
                 >
                   <svg
-                    className="flex-shrink-0 d-flex me-2"
-                    style={{ maxWidth: "2rem", height: "2rem" }}
-                    aria-label="Fail:"
+                    className="bi"
+                    width="32"
+                    height="32"
+                    fill="currentColor"
                   >
-                    <use xlinkHref="#exclamation-triangle-fill" />
+                    <use href="#exclamation-triangle-fill"></use>
                   </svg>
                   <div>
                     Failed to send your message. Please check the details and
@@ -222,7 +226,9 @@ export default function Contact() {
             )}
           </div>
         </form>
-        <ContactTab />
+        <div className="d-flex justify-content-center">
+          <ContactTab />
+        </div>
       </div>
     </div>
   );
