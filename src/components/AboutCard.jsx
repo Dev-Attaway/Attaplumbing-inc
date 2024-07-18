@@ -1,10 +1,12 @@
 import React from "react";
 import { IKImage, IKContext } from "imagekitio-react";
+import "../styles/AboutCard.css";
+
 function AboutCard({ imageSrc, title, text, imageWidth, imageHeight }) {
   imageWidth = 300; // Replace with actual width of the image
   imageHeight = 200; // Replace with actual height of the image
   return (
-    <div className="card">
+    <div className="card" style={{ maxWidth: "45em" }}>
       <IKContext urlEndpoint={import.meta.env.VITE_IMAGEKIT}>
         <IKImage
           src={imageSrc}

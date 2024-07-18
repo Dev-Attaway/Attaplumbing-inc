@@ -1,36 +1,38 @@
 import "../styles/Footer.css";
-import { Link } from "react-router-dom";
+import { IKImage, IKContext } from "imagekitio-react";
 
 function Footer() {
   return (
-    <footer className="justify-content-bottom">
-      <div className="footer mt-auto py-3 d-flex justify-content-around align-items-center">
-        {/* Link the user back to the homepage. The to prop is used in place of an href */}
-        <Link
-          to="/"
-          className="mx-auto"
-          style={{
-            display: "inline-block",
-          }}
-        >
-          ← About me
-        </Link>
-        <div className="mx-auto">
-          <a
-            href="https://github.com/Dev-Attaway"
-            target="_blank"
-            rel="noopener noreferrer"
-          ></a>
+    <div className="justify-content-bottom">
+      <div className="footer mt-auto d-flex justify-content-center align-items-center flex-column">
+        <div className="card border-rounded p-2 m-4 shadow">
+          <div className="card-body">
+            <IKContext urlEndpoint={import.meta.env.VITE_IMAGEKIT}>
+              <IKImage
+                src="https://ik.imagekit.io/pbq9icsqc/logo-NO-lisc.webp?updatedAt=1720653473902"
+                alt="company logo w/lic"
+                loading="lazy"
+                width="200"
+                height="50"
+              />
+            </IKContext>
+            <div className="ps-3">
+              <h6 className="font-monospace">LIC# #824790 &nbsp; &nbsp;</h6>
+              <a
+                href="https://www.cslb.ca.gov/OnlineServices/CheckLicenseII/LicenseDetail.aspx?LicNum=824790"
+                className="foot-link"
+                target="_blank"
+              >
+                ✓ License Check
+              </a>
+              <p></p>
+            </div>
+          </div>
         </div>
-        <div className="mx-auto">
-          <a
-            href="https://www.linkedin.com/in/nicholas-attaway-a682a12b9/"
-            target="_blank"
-            rel="noopener noreferrer"
-          ></a>
-        </div>
+
+        <div className="bottom-footer p-2 w-100"></div>
       </div>
-    </footer>
+    </div>
   );
 }
 

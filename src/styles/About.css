@@ -1,7 +1,16 @@
+.blurImg {
+  filter: blur(4px);;
+}
 
-    .reviews {
-      display: flex;
-    }
+.blurImg.loaded >IKImage {
+  opacity: 1;
+}
+
+.blurImg > IKImage
+{
+  opacity: 0;
+  transition: opacity 200ms ease-in-out
+}
 
 
 @media screen and (max-width: 995px) {

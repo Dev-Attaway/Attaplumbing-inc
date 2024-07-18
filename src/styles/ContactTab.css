@@ -1,26 +1,9 @@
-.contact-img {
-  padding-left: 0.5rem !important;
+.contact-link {
+  text-decoration: none;
+  color: var(--attaplumbing-red);
 }
 
-.contact-h2 {
-  padding-left: 0.5rem !important;
-}
-
-.flex-card {
-  display: inline-flex;
-  flex-direction: row;
-  transition: all 1s ease;
-}
-
-@media screen and (max-width: 1495px) {
-  .flex-card {
-    flex-direction: column;
-  }
-
-  .contact-img {
-    padding-left: 0 !important;
-  }
-  .contact-h2 {
-    padding-left: 0rem !important;
-  }
+.contact-link:hover {
+  text-decoration: none;
+  color: var(--attaplumbing-red);
 }

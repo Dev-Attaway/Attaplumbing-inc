@@ -4,12 +4,12 @@ import { IKImage, IKContext } from "imagekitio-react";
 
 export default function BuildZoomReviews() {
   return (
-    <div className="p-2 justify-content-center">
+    <div className="p-2 justify-content-center d-flex">
       <div
-        className="shadow car p-3 m-3"
+        className="shadow card p-3 m-3"
         style={{ width: "15rem", height: "20rem" }}
       >
-        <div className="mt-auto p-2 justify-content-center align-items-center flex-column">
+        <div className="mt-auto p-2 d-flex justify-content-center align-items-center flex-column">
           <h5>Also, checkout our page on</h5>
           <a
             href={`https://www.buildzoom.com/contractor/atta-plumbing-inc`}
@@ -29,7 +29,7 @@ export default function BuildZoomReviews() {
           </a>
         </div>
         <div className="card mb-1">
-          <div className="card-body justify-content-evenly">
+          <div className="card-body d-flex justify-content-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="22"
