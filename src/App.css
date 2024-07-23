@@ -17,6 +17,13 @@
     rgb(190, 190, 190)
   );
 }
+
+body,
+html {
+  overscroll-behavior: contain;
+  touch-action: pan-y;
+}
+
 main {
   background: repeating-radial-gradient(
     circle at 0 0,
