@@ -3,7 +3,17 @@
   color: black;
 }
 
+.foot-link-mobile{
+  text-decoration: none;
+  color: black;
+}
+
 .foot-link:hover {
+  text-decoration: underline;
+  color: crimson;
+}
+
+.foot-link-mobile:active {
   text-decoration: underline;
   color: crimson;
 }
