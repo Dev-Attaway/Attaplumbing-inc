@@ -9,11 +9,6 @@ export const MobileProvider = ({ children }) => {
     const isMobileDevice = checkIfMobile();
     setIsMobile(isMobileDevice);
 
-    // Function to prevent default touchmove behavior on mobile devices
-    const preventDefault = (e) => {
-      e.preventDefault(); // Prevent scrolling or dragging
-    };
-
     // Add touchmove event listener only if it's a mobile device
     if (isMobileDevice) {
       document.addEventListener("touchmove", preventDefault, {
