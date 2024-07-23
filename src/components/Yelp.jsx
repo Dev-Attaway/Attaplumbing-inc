@@ -1,8 +1,9 @@
-import React from "react";
 import "../styles/YelpReviews.css";
 import { IKImage, IKContext } from "imagekitio-react";
+import { mobileCheck } from "../MobileCheck";
 
 export default function YelpReviews() {
+  const isMobile = mobileCheck();
   return (
     <div className="p-2 justify-content-center">
       <div
@@ -20,7 +21,7 @@ export default function YelpReviews() {
               <IKImage
                 src="https://ik.imagekit.io/pbq9icsqc/vecteezy_yelp-logo-png-yelp-icon-transparent-png_27127534.webp?updatedAt=1720653474275"
                 alt="yelp logo image"
-                className="yelp-logo-image"
+                className={`${isMobile ? "" : "yelp-logo-image"}`}
                 width="150"
                 height="100"
               />

@@ -1,8 +1,10 @@
-import React from "react";
 import "../styles/BuildZoomReviews.css";
 import { IKImage, IKContext } from "imagekitio-react";
+import { mobileCheck } from "../MobileCheck";
 
 export default function BuildZoomReviews() {
+  const isMobile = mobileCheck();
+
   return (
     <div className="p-2 justify-content-center d-flex">
       <div
@@ -20,7 +22,7 @@ export default function BuildZoomReviews() {
               <IKImage
                 src="https://ik.imagekit.io/pbq9icsqc/Buildzoom.webp?updatedAt=1720653474213"
                 alt="BuildZoom Logo"
-                className="buildZoom-logo-image"
+                className={`${isMobile ? "" : "buildZoom-logo-image"}`}
                 loading="lazy"
                 width="200"
                 height="150"

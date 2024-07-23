@@ -1,12 +1,13 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import { useMatch } from "react-router-dom";
 import { IKImage, IKContext } from "imagekitio-react";
+import { mobileCheck } from "../MobileCheck";
 import "../styles/ContactTab.css";
 
 function ContactTab() {
   const match = useMatch("/Contact");
   const isContactPage = match !== null;
+  const isMobile = mobileCheck();
 
   return (
     <div className="card m-3 p-3" style={{ minWidth: "25rem" }}>
@@ -45,7 +46,10 @@ function ContactTab() {
           <div className="text-center mt-3">
             <h2>
               Or through our&nbsp;→&nbsp;
-              <Link className="contact-link fw-semibold" to="/Contact">
+              <Link
+                className={`fw-semibold ${isMobile ? "contact-link-mobile" : "contact-link"}`}
+                to="/Contact"
+              >
                 Contact Page
               </Link>
             </h2>

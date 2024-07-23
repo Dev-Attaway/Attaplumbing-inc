@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Outlet } from "react-router-dom";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
+import { MobileProvider } from "./MobileCheck";
+
 import "../src/App.css";
 
 function App() {
@@ -17,13 +19,13 @@ function App() {
   }, []);
 
   return (
-    <>
+    <MobileProvider>
       <Header className={isSticky ? "sticky" : ""} id="myHeader" />
       <main>
         <Outlet />
         <Footer />
       </main>
-    </>
+    </MobileProvider>
   );
 }
 

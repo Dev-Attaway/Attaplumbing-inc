@@ -5,6 +5,7 @@ import "../styles/Contact.css";
 import ContactTab from "../components/ContactTab";
 import ReCAPTCHA from "react-google-recaptcha";
 import { IKImage, IKContext } from "imagekitio-react";
+import { mobileCheck } from "../MobileCheck";
 
 // Define the Contact component
 export default function Contact() {
@@ -31,6 +32,7 @@ export default function Contact() {
       [name]: value,
     });
   };
+  const isMobile = mobileCheck();
 
   // Handle form submission
   const handleSubmit = () => {
@@ -84,8 +86,8 @@ export default function Contact() {
   };
 
   return (
-    <div className="container-fuild p-4">
-      <div>
+    <div className="container-fuild">
+      <div className="p-2 m-2">
         <form>
           <div className="form-group">
             <label htmlFor="firstName" className="font-monospace fs-5">
@@ -97,7 +99,7 @@ export default function Contact() {
               value={form.firstName}
               onChange={handleInputChange}
               name="firstName"
-              className="form-control m-2"
+              className="form-control w-50"
             />
             {checkName && (
               <p className="text-danger">Invalid name submitted!</p>
@@ -114,7 +116,7 @@ export default function Contact() {
               value={form.email}
               onChange={handleInputChange}
               name="email"
-              className="form-control m-2"
+              className="form-control w-75"
             />
             {checkEmail && (
               <p className="text-danger">Invalid email submitted!</p>
@@ -130,7 +132,7 @@ export default function Contact() {
               value={form.message}
               onChange={handleInputChange}
               name="message"
-              className="form-control m-2"
+              className="form-control"
               rows={7}
             ></textarea>
             {checkMessage && (
@@ -147,7 +149,7 @@ export default function Contact() {
 
           <button
             disabled={!captchaSuccess || isLoading}
-            className="btn btn-custom m-3"
+            className={`m-3 ${isMobile ? "btn-custom-contact-mobile" : "btn-custom-contact"}`}
             type="button"
             data-bs-toggle="offcanvas"
             data-bs-target="#offcanvasTop"
