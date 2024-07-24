@@ -1,10 +1,13 @@
+// Import necessary hooks and components
 import { useState } from "react";
 import ServicesPrimer from "../components/ServicesPrimer";
 import ServiceOption from "../components/ServiceOption";
 import "../styles/Services.css";
 import { mobileCheck } from "../MobileCheck";
 
+// Define the Services component
 export default function Services() {
+  // Define state for managing button states
   const [buttonStates, setButtonStates] = useState({
     "btn-1": { isDisabled: false, text: "Show" },
     "btn-2": { isDisabled: false, text: "Show" },
@@ -16,11 +19,15 @@ export default function Services() {
     "btn-8": { isDisabled: false, text: "Show" },
   });
 
+  // Check if the user is on a mobile device
   const isMobile = mobileCheck();
 
+  // Handler for button click events
   const handleButtonClick = (buttonId) => {
-    if (buttonStates[buttonId].isDisabled) return; // Prevent action if button is disabled
+    // Prevent action if the button is disabled
+    if (buttonStates[buttonId].isDisabled) return;
 
+    // Update button state: toggle between "Show" and "Close", and disable button temporarily
     setButtonStates((prevStates) => ({
       ...prevStates,
       [buttonId]: {
@@ -30,6 +37,7 @@ export default function Services() {
       },
     }));
 
+    // Re-enable the button after a delay of 300ms
     setTimeout(() => {
       setButtonStates((prevStates) => ({
         ...prevStates,

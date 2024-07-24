@@ -1,10 +1,10 @@
 import "../styles/BuildZoomReviews.css";
-import { IKImage, IKContext } from "imagekitio-react";
-import { mobileCheck } from "../MobileCheck";
+import { IKImage, IKContext } from "imagekitio-react"; // Importing imagekit
+import { mobileCheck } from "../MobileCheck"; // Importing MobileCheck
 
 export default function BuildZoomReviews() {
+  // isMobile is given the context from mobileCheck, which gives the State of isMobile (Boolean)
   const isMobile = mobileCheck();
-
   return (
     <div className="p-2 justify-content-center d-flex">
       <div

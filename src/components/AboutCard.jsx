@@ -2,6 +2,8 @@ import React from "react";
 import { IKImage, IKContext } from "imagekitio-react";
 import "../styles/AboutCard.css";
 
+// values paused into the component: imageSrc, title and text are vlaues passed from AboutTheCompany component
+// imageWidth and imageHeight are found on AboutCard (Current location)
 function AboutCard({ imageSrc, title, text, imageWidth, imageHeight }) {
   imageWidth = 300; // Replace with actual width of the image
   imageHeight = 200; // Replace with actual height of the image

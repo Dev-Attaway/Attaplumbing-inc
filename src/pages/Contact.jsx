@@ -1,4 +1,5 @@
 // Import the necessary hooks and modules
+// Import the necessary hooks and modules
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
 import "../styles/Contact.css";
@@ -32,6 +33,8 @@ export default function Contact() {
       [name]: value,
     });
   };
+
+  // Check if the device is mobile
   const isMobile = mobileCheck();
 
   // Handle form submission
@@ -45,13 +48,16 @@ export default function Contact() {
     setCheckName(!form.firstName);
     setCheckMessage(!form.message);
 
+    // If all validations pass, proceed to send the email
     if (isValidEmail && form.firstName && form.message && captchaSuccess) {
       setIsLoading(true); // Set loading state
 
+      // Get environment variables for EmailJS
       const service = import.meta.env.VITE_SERVICE;
       const template = import.meta.env.VITE_TEMPLATE;
       const public_key = import.meta.env.VITE_PUBLIC;
 
+      // Prepare the email parameters
       const templateParams = {
         from_name: form.firstName,
         from_email: form.email,
@@ -59,6 +65,7 @@ export default function Contact() {
         message: form.message,
       };
 
+      // Send the email using EmailJS
       emailjs
         .send(service, template, templateParams, public_key)
         .then(() => {
@@ -84,7 +91,6 @@ export default function Contact() {
       setEmailSuccess(false);
     }
   };
-
   return (
     <div className="container-fuild">
       <div className="p-2 m-2">
