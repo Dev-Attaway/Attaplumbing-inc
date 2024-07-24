@@ -1,12 +1,18 @@
-import { Link } from "react-router-dom";
-import { useMatch } from "react-router-dom";
-import { IKImage, IKContext } from "imagekitio-react";
-import { mobileCheck } from "../MobileCheck";
+import { Link, useMatch } from "react-router-dom";
+import { IKImage, IKContext } from "imagekitio-react"; // Importing imagekit
+import { mobileCheck } from "../MobileCheck"; // Importing MobileCheck
 import "../styles/ContactTab.css";
 
 function ContactTab() {
+  // Returns match data about a route at the given path relative to the current location.
   const match = useMatch("/Contact");
+
+  // isContactPage = match
+  // if (match == null) then isContactPage == false
+  // Otherwise (match !== null) then isContactPage == true
   const isContactPage = match !== null;
+
+  // isMobile is given the context from mobileCheck, which gives the State of isMobile (Boolean)
   const isMobile = mobileCheck();
 
   return (

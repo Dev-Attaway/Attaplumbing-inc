@@ -3,6 +3,9 @@ import { Link, useLocation } from "react-router-dom";
 import "../styles/Nav.css";
 
 function NavTabs() {
+  // useLocation grabs the current location object, which represents the current URL in web browsers
+  // pathname gives A URL pathname, beginning with a /.'
+  // Therefore currentPage is the current page's URL
   const currentPage = useLocation().pathname;
 
   return (

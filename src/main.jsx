@@ -1,4 +1,3 @@
-import React from "react";
 
 // Import ReactDOM from the react-dom package to interact with the DOM
 import ReactDOM from "react-dom/client";
